@@ -1,3 +1,4 @@
 target
 apache-tomcat*
 package.json
+*.sh
