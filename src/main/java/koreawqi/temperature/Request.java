@@ -43,14 +43,23 @@ public class Request {
                                 + "\"," + "" + "\"temp\":";
                         jsonDataString += "\"";
                         try {
-                            jsonDataString += Float.toString(Float.parseFloat(table_01Elements.get(i).childNode(j).childNode(k).childNode(4).toString()));
+                            jsonDataString += Float.toString(Float.parseFloat(
+                                    table_01Elements.get(i).childNode(j).childNode(k).childNode(4).toString())) == ""
+                                            ? ""
+                                            : table_01Elements.get(i).childNode(j).childNode(k).childNode(4).toString();
                         } catch (Exception e) {
-                            jsonDataString += table_01Elements.get(i).childNode(j).childNode(k).childNode(3)
-                                    .childNode(0).toString();
+                            jsonDataString += "정보없음";
+                        } finally {
+
+                            jsonDataString += "\"";
+                            jsonDataString += "" + "}";
                         }
-                        jsonDataString += "\"";
-                        jsonDataString += "" + "}";
-                    } catch (Exception e) {
+                        // jsonDataString +=
+                        // table_01Elements.get(i).childNode(j).childNode(k).childNode(3).childNodeSize()
+                        // >0 ?
+                        // "":table_01Elements.get(i).childNode(j).childNode(k).childNode(3).childNode(0).toString();
+
+                    } catch (IndexOutOfBoundsException e) {
                         continue;
                     }
                 }
