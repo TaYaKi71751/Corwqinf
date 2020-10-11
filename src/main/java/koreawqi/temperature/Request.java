@@ -43,7 +43,7 @@ public class Request {
                                 + "\"," + "" + "\"temp\":";
                         jsonDataString += "\"";
                         try {
-                            jsonDataString += table_01Elements.get(i).childNode(j).childNode(k).childNode(4).toString();
+                            jsonDataString += Float.toString(Float.parseFloat(table_01Elements.get(i).childNode(j).childNode(k).childNode(4).toString()));
                         } catch (Exception e) {
                             jsonDataString += table_01Elements.get(i).childNode(j).childNode(k).childNode(3)
                                     .childNode(0).toString();
