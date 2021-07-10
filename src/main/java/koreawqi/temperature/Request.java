@@ -48,7 +48,7 @@ public class Request {
                                             ? ""
                                             : table_01Elements.get(i).childNode(j).childNode(k).childNode(4).toString();
                         } catch (Exception e) {
-                            jsonDataString += "정보없음";
+                            jsonDataString += "No data;)";
                         } finally {
 
                             jsonDataString += "\"";
